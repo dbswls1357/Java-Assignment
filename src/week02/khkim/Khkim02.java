@@ -17,14 +17,14 @@ public class Khkim02 {
 		int age = scanner.nextInt();
 		
 		scanner.nextLine();
-		System.out.println("주소:");
+		System.out.print("주소:");
 		String addr = scanner.nextLine();
 		
 		System.out.println("학번:"+number);
 		System.out.println("이름:"+name);
 		System.out.println("나이:"+age);
 		System.out.println("주소:"+addr);
-		
+		 
 		scanner.close();
 
 		

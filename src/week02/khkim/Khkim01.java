@@ -6,6 +6,7 @@ import java.util.Scanner;
 public class Khkim01 {
 
 	public static void main(String[] args) throws IOException  {
+		//20220906 수업 
 		// week01
 		// casting : 자동, 수동(명시적 타입변환)
 	 	// short 타입 연산에서 오류난 이유는 int타입보다 작아서 int로 자동변환됨.
