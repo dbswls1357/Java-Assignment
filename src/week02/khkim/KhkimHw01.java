@@ -2,9 +2,10 @@ package week02.khkim;
 
 import java.util.Scanner;
 
-public class Khkim02 {
+public class KhkimHw01 {
 
 	public static void main(String[] args) {
+
 		Scanner scanner = new Scanner(System.in);
 
 		System.out.print("학번:");
