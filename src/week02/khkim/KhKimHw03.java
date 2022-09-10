@@ -4,8 +4,9 @@ import java.util.Scanner;
 
 public class KhkimHw03 {
 
-
 	public static void main(String[] args) {
+		System.out.println("201811962 김기현");
+
 		Scanner scanner = new Scanner(System.in);
 		
 		// 플레이어 패 입력 시작 
@@ -54,7 +55,6 @@ public class KhkimHw03 {
 						System.out.println(" com : " + numName);
 					}
 
-			
 					// 승패 조건 
 					if ((userNum - randomNum) == 1 || (userNum - randomNum) == -2 ) {
 						System.out.println("승");
