@@ -1,119 +1,148 @@
 package week02.khkim;
 
-import java.util.Random;
+import java.util.Scanner;
 
 public class Khkim03 {
 
 	public static void main(String[] args) {
-		// 20220908 수업 
-		// 연산자 
-		// =>n의 배수인지 확인해라, 자리수를 뜯어라
 		
-		// 산술연산자 주의점 
-		// short 타입으로 계산해도 형변환을 안해도 된다.
-		// int type보다 작다면 int타입으로 계산됨.
-		
-		// 0으로 나누었을 때 ArithmeticException 주의하기
-		// 0.0으로 나누면 Infinity or NaN(예외가 아님)
-		// 왜냐하면 0.0은 0.000000000...1의 값이기 때문
-		
-		// 시프트 연산자 
-		// >>> 논리연산자  : 최상위 비트에 0이 채워진다.
-		// 0b00001010 => 8개 중 두개의 비트만 이상 정보를 가짐 
-		
-//		// 비트 연산 예1)
-//		int a = 10;
-//		int b = -8;
-//		int c = a & b; // and 연산 
+//		// 예시 1 for문)
+//		int i = 0;
+//		int sum = 0;
 //		
-//		System.out.println("a:"+Integer.toBinaryString(a));
-//		System.out.println("b:"+Integer.toBinaryString(b));
-//		System.out.println("c:" + Integer.toBinaryString(c));
-//		
-//		// 비트 연산 예2)
-//		int a = 10;
-//		int b = -8; // 32bit
-//		int c = a & b;
-//		
-//		String str = "0"; // String 객체 생성 
-//		str = str.repeat(32) + Integer.toBinaryString(a); // count만큼 반복해서 새로운 문자를 만들어 낸다. // 32비트로 생성 
-//		String astr = str.substring(str.length()-32); // length()안에 아무것도 안나와도 되는구나! // 4번째부터 마지막까지 
-//		String cstr = Integer.toBinaryString(c);
-//		
-//		System.out.println("a : " + astr);
-//		System.out.println("b : " + Integer.toBinaryString(b));
-//		System.out.println("c : " + "0".repeat(32-cstr.length()) + cstr); // '0' 28개 + cstr
-
-		// 비트 연산 예3)
-//		int a = 10;
-//		int b = -8;
-//		
-//		// 잘못 생각한 코드 
-//		int tmp = 0;
-//		int tmp = a;
-//		int a = b;
-//		int b = b;
-		
-		// #1
-//		int tmp = a;
-//		a = b;
-//		b = tmp;
-//		
-		// #2
-//		int a = 10;
-//		int b = -8;
-//		
-//		a = a^b;
-//		b = a^b;
-//		a = a^b;
-
-//		
-//		System.out.println(a);
-//		System.out.println(b);
-//		
-	
-//      과제 		
-//		16진수니까 2개가 한바이트 88 : 투명도, a5 :red, ff : green, 73 : blue
-//		비트 연산으로 계산하기!!!
-//		출력값만 binary String으로 변환하기 
-		
-		
-		// 예제 while문 대소문자 
-		// 왜 이 방법을 생각못했을까?
-//		Scanner scanner = new Scanner(System.in);
-//		while(true) {
-//			String str1 = scanner.next();
-//			char a = str1.charAt(0);// Scanner에는 char이 없다. => String.charAt()사용 		
-//			if(a >= 'A' && a < 'Z') {
-//				System.out.print(a + ": 대문자");
-//			}else if(a >= 'a' && a < 'z') {
-//				System.out.print(a + ": 소문자");
-//			}else if(a >= '0' && a < '9') {
-//				System.out.print(a + ": 숫자");
+//		for(i = 1; i <= 10; i++) {
+//			sum += i;
+//			System.out.print(i);
+//			
+//			if(i<= 9) {
+//				System.out.print("+");
 //			}else {
-//				System.out.print(a + ": 기타");
+//				System.out.print("=");
+//				
+//				System.out.print(sum);
 //			}
 //		}
 		
-//		 switch 반드시 break 걸기!! case문에는 식이 오면 안됨 
 		
-		// 과제3 출력 : 형식 지킬 것 
-		// 무승부, 패 사용자 패, 컴퓨터 패 등 결과 출력, 반복 필요 없음
-		// if문을 9개 만들지 말고, 이기는 전략을 잘 분석 : 가위 바위 보 빼기 더하기 이런건가?
+//		// 예시 2 while문)
+//		Scanner scanner = new Scanner(System.in);
+//		
+//		int count = 0, n = 0;
+//		double sum = 0;
+//		
+//		System.out.println("0을 마지막에 입력");
+//		while((n = scanner.nextInt()) != 0){
+//			sum += n;
+//			count++;
+//		}
+//		System.out.println("평균" + sum/count);
+//		System.out.println("수" + count);
 		
-		// 가위 1    가위 - 바위 = -1 (패), 
-		// 바위 2    바위 - 가위 = +1 (승)
-		// 보   3    무승부 : 0
 		
-		Random r = new Random();
-		while(true) {
-			int num = r.nextInt(3);
-			System.out.println(num);
+//		// 예시 3 do-while문)
+//		char a = 'a';
+//		
+//		do {
+//			System.out.print(a);
+//			a = (char) (a+1);
+//			
+//		}while(a <= 'z');
 
-		}
-		   
 		
-	
+//		// 예시 4 2중 for문)
+//		for(int i = 1; i <10; i++) {
+//			for (int j =1; j<10; j++) {
+//				System.out.print(i + "*" + j + "=" + i*j);
+//				System.out.print('\t');
+//			}		
+//			System.out.println();
+//
+//		}	
+		
+//		// 예시 5 continue)
+		//continue : 반복 후 작업할 내용으로 이동함. {}를 빠져나가지 않음 
+		
+//		// 예시 6 break)
+		//break :{}를 빠져나가는 반복문 + 가장 가까이에 있는 
+		
+//		// 예시 7 글자 수 출력하기)
+//		// 조건 : 입력을 받고 공백이나 탭 등은 카운트 하지 않음
+//		Scanner scanner = new Scanner(System.in);
+//		System.out.println("문장 입력해주세요 : ");
+//		String input = scanner.nextLine();
+//		
+//		int count = 0;
+//		for(int i = 0; i<input.length(); i++) {
+//			char ch = input.charAt(i);
+//			if ((ch != ' ')&& (ch != '\t' )) {
+//				count += 1;
+//				// count++
+//			}
+//		}
+//		System.out.println("글자수 : " + count);
+//		scanner.close();
+			
+
+//		// 예시 8 커피 주문하기)
+		Scanner scanner = new Scanner(System.in);
+		
+		int americano = 0;
+		int latte     = 0;
+		
+		final int AMERICANO = 100;
+		final int LATTE     = 200;
+		
+		while (true) {
+			System.out.println("아메리카노 1. 100원 라떼 2. 200원 3. 결제 4. 종료 ");
+			
+			int menu = scanner.nextInt();
+			
+			switch(menu) {
+			case 1:
+				americano++;
+				System.out.println("americano 주문완료 ");
+				System.out.println();
+				break;
+				
+			case 2:
+				latte++;
+				System.out.println("latte 주문완료 ");
+				System.out.println();
+				break;
+				
+			case 3:
+				System.out.println("++++++++++++++ ");
+				System.out.println("결제 금액 ");
+				System.out.println("++++++++++++++ ");
+				System.out.println("아메리카노" +americano +"잔" +( americano*AMERICANO)+"원");
+				System.out.println("라떼" +latte +"잔" +( latte*LATTE)+"원");
+				
+				int total = (americano*AMERICANO) + (latte*LATTE);
+				System.out.println("결제 금액 " + total);
+				System.out.println("++++++++++++++ ");
+				americano = 0; // 주문이 끝나고 초기화 
+				latte     = 0; // 주문이 끝나고 초기화 
+				break;
+				
+			case 4:
+				scanner.close();
+				System.out.println("시스템을 종료합니다.");
+				System.exit(0); // 시스템 종료 !!!!
+				break;
+				
+			default:
+				System.out.println("메뉴를 확인해주세요");
+				System.out.println();
+				break;
+			}
+			
+		
+		}
+
+		
+		
+		
+		
 	}
 
 }
