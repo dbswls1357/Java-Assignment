@@ -2,7 +2,7 @@ package week03.khkim;
 
 import java.util.Scanner;
 
-public class Khkim01 {
+public class Khkim01Online {
 
 	public static void main(String[] args) {
 		// 배열 생성

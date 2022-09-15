@@ -1,6 +1,6 @@
 	package week03.khkim;
 
-public class Khkim02 {
+public class Khkim02Online {
 
 
 	
