@@ -9,7 +9,6 @@ public class KhkimAssign {
 	
 		Scanner scanner = new Scanner(System.in);
 
-//		scanner.close(); 언제 달아야 하는지?
 
 		while(true) {
 			System.out.println("1) 쿠폰으로 초콜릿 구매하기 2) 문자 산수 퍼즐 3) 구구단 출력하기 4) 종료 ");
@@ -18,7 +17,7 @@ public class KhkimAssign {
 	
 
 			switch(inputNum) {
-
+				
 				case 1:
 					menu1();
 					break;
@@ -34,15 +33,15 @@ public class KhkimAssign {
 				case 4:
 					System.out.println("종료합니다. ");
 					System.exit(0);
+					scanner.close();
 					break;
 					
 				default:
 					System.out.println("다른 수 입력해주세요 ");
 					break;
-			}
-
+					
+			}		
 		}
-
 	}
 
 	public static void menu1() {
@@ -52,12 +51,15 @@ public class KhkimAssign {
 		final int chocolate_price = 1;
 		int money = scanner.nextInt();
 
+		if(money <7) {
+			System.out.println("-----------------------------");
+	
+			System.out.println("초콜릿 " + money + "개, " + "쿠폰 " +money + "개");
+		}
 		while(money>=7) {
 			int	chocolate =  money/7 + money; // 구매 가능한 초콜릿
-			int coupon = chocolate + money % 7 - money;  // 초콜릿 구매하고 남은 쿠폰 
-			
-			//int plus_coupon = coupon + chocolate; // 초콜릿을 산 다음의 쿠폰 + 원래 쿠폰
-			
+			int coupon = chocolate + money % 7 - money;  // 초콜릿 구매하고 남은 쿠폰 (원래의 쿠폰 제)
+						
 			while(coupon>=7) {
 				chocolate = chocolate + coupon/7; // 초콜릿 개수(money) 더함 
 				coupon = coupon%7 + coupon/7;
@@ -65,14 +67,7 @@ public class KhkimAssign {
 
 			}
 			
-//			if(plus_coupon>=7) {
-//				chocolate = chocolate + plus_coupon/7 + money; // 초콜릿 개수(money) 더함 
-//				coupon = plus_coupon%7 + plus_coupon/7;
-//			}else {
-//				chocolate = chocolate + money; 
-//				coupon = plus_coupon%7 ;
-//			}
-			
+
 			System.out.println("-----------------------------");
 
 			System.out.println("초콜릿 " + chocolate + "개, " + "쿠폰 " +coupon + "개");
@@ -113,23 +108,43 @@ public class KhkimAssign {
 			
 			int gugudanNum = scanner.nextInt();
 			
+			int dan = 1;
+			int num = gugudanNum;
+			int num2 = num;
+
 			if((gugudanNum < 1) || (gugudanNum > 8)){
 				System.out.println("출력 단 수 입력이 잘못되었습니다. ");
-				continue; // break 차이점 잘 알기 
-			}else {
-				for(int j = gugudanNum; j<10; j++) {
-					for(int i = 1; i<10; i++) {
-						System.out.print(j + " * " + i+  " = "+ i*j +'\t');
-					}				
+				continue; 
+			}
+			while(true) {
+				
+				if (8 - num2 > 0) {
+					for(int j = 1; j < 10; j++) {
+						for(int i = dan; i <= num2; i++) {
+							System.out.print((i + 1) + " * " + j + " = " + ((i + 1) * j) +'\t');
+						}
+						System.out.println();
+					}
+					dan += num;
+					num2 += num;
 					System.out.println();
-				} 
+				
+				}else {
+					for(int j = 1; j<10; j++) {
+						for(int i = dan; i<9; i++) {
+							System.out.print((i+1) + " * " + j+  " = "+ gugudanNum*j +'\t');
+						}				
+						System.out.println();
+					} 
+					break;
+
+				}
+				
 			}
 			System.out.println();
-
 			break;
-
 		}
-		
-	}
+		System.out.println();
 
+	}
 }

@@ -41,7 +41,7 @@ public class KhkimHw02 {
 				scores[i][scores.length] = ranking + 1;
 			}
 			
-			// 이름, 점수, 합산까지 출
+			// 이름, 점수, 합산까지 출력
 			for(int i = 0; i< scores.length; i++) {
 				String[] stdnames = {"홍길동", "고길동", "김길동", "이길동"};
 				System.out.print(stdnames[i] + " >> ");
