@@ -34,7 +34,7 @@ public class KhkimHw02 {
 			for(int i = 0; i<scores.length; i++) {
 				int ranking = 0;
 				for(int j =0; j< scores.length; j++){
-					if(scores[i][scores[0].length -2] < scores[j][scores[0].length -2]) {
+					if(scores[i][scores[0].length -2] < scores[j][scores[0].length -2]) { // 랭킹이 더 작아져야 낮은 랭킹 
 						ranking++;
 					}
 				}
@@ -52,7 +52,7 @@ public class KhkimHw02 {
 					else if (k == 4)
 						System.out.print(": ");
 					System.out.print(j + " ");
-					k++;
+					k++; // 여기서 k가 도는구나!!! 약간 처음 생각하는 발상이다!
 
 				}			
 				System.out.println();
