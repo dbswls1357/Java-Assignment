@@ -1,20 +1,11 @@
-//package week04.khkim;
-////for Khkim0920_0 test
-//
-//public class TV { // package 내부에 동일한 클래스가 2개이상 있을 수 없음 
-//	
-//
-//}
+package week04lab;
 
-package week04.khkim;
-public class TV  { // package 내부에 동일한 클래스가 2개이상 있을 수 없음 
-	boolean power = true;  
+public class TV {
+	boolean power = true;
 	int channel = 10;
-	int volume = 2;
-	//int volume = 1;
-
-	public void show() { 
-	// public static void show() //: power를 사용할 수 없음 
+	int volume = 10;
+	
+	public void show() {
 		if(power) {
 			System.out.println("channel " + channel+"번 시청중입니다. ");
 			System.out.println("volume 크기는 " + volume+"입니다. ");
@@ -22,32 +13,31 @@ public class TV  { // package 내부에 동일한 클래스가 2개이상 있을
 			System.out.println("전원이 꺼져있습니다.  ");
 		}
 	}
-
+	
 	public void powerOnOff() {
 		power = !power;
-		show(); // 메서드 실행 
+		show();
 	}
 	
-	public void channelUP() {
-		if(power) { // 전원이 켜져있을 때만 실행 
+	public void channelUp() {
+		if(power) {
 			channel++;
 		}
 		show();
 	}
-	
 	public void channelDown() {
-		if(power) {
+		if(power){
 			channel--;
 		}
 		show();
 	}
-	
 	public void volumeUp() {
 		if(power) {
 			volume++;
 			if(volume > 20) {
 				volume = 20;
 			}
+
 		}
 		show();
 	}
@@ -55,12 +45,27 @@ public class TV  { // package 내부에 동일한 클래스가 2개이상 있을
 	public void volumeDown() {
 		if(power) {
 			volume--;
-			if(volume <0) {
+			if(volume < 0) {
 				volume = 0;
 			}
+
 		}
 		show();
 	}
+	public void changeChannel(int ch) {
+		channel = ch;
+		show();
+	}
+	
+	public void changeVolume(int vol) {
+		volume = vol; //int 붙이지 말것. 왜냐 : 정의되어있으니까 
+		if(volume < 0) {
+			volume = 0;
+		}else if(volume > 20) {
+			volume = 20;
+		}
+		show();
+
+	
+	}
 }
-
-

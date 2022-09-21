@@ -16,5 +16,7 @@ public class changeCharacter {
 		//repalceChar(str.toCharArray(), a, b); // 에러 발생, 익명 객체 생성  
 		repalceChar(cstr, a, b);
 		return cstr;
+		// character형 타입 : 문자열 출력 
+		
 	}
 }
