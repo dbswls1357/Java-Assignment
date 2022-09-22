@@ -11,8 +11,14 @@ public class TV  { // package 내부에 동일한 클래스가 2개이상 있을
 		this.volume = tv.volume;
 	}
 
+	public TV(boolean power, int channel) {
+		this.power = power;
+		this.channel = channel;
+	}
+	
 	public TV() {
-	} // 디폴트
+		this(false, 10);
+	}// 디폴트 
 
 	public void show() { 
 	// public static void show() //: power를 사용할 수 없음 
