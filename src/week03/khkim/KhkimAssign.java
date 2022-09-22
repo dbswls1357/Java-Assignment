@@ -10,66 +10,76 @@ public class KhkimAssign {
 	static final int COL = 3;
 	
 	public static void main(String[] args) {
-
 		String[][] parkingSpace = new String[ROW][COL]; // 배열 초기화 
-		
-		System.out.println("**** 주차 현황 ****");
-		System.out.print(" "); // COL 출력 
-		for(int i = 1; i<COL+1; i++) {
-			System.out.print(" " + i);
-		}		
-		System.out.println();
-		for(int j = 0; j<ROW; j++) {
-			System.out.print(j+1 + " ");
-			for(int k = 0; k<COL; k++) {
-				parkingSpace[j][k] =  "♡";
-				System.out.print(parkingSpace[j][k] + " ");
-			}
-			System.out.println();
-		}
-		System.out.println();
 
-		// 메뉴선택 
-		selectMenu();
+		while(true) {
+			System.out.println("**** 주차 현황 ****");
+			System.out.print(" "); // COL 출력 
+			for(int i = 1; i<COL+1; i++) {
+				System.out.print(" " + i);
+			}		
+			System.out.println();
+			for(int j = 0; j<ROW; j++) {
+				System.out.print(j+1 + " ");
+				for(int k = 0; k<COL; k++) {
+					parkingSpace[j][k] =  "♡";
+					System.out.print(parkingSpace[j][k] + " ");
+				}
+				System.out.println();
+			}
+			System.out.println();	
+//			printParking(parkingSpace); // 함수로 만들면서 파라미터로 넘김
+			
+			while(true) {
+				selectMenu(parkingSpace);
+				break; // break를 걸어 주차현황을 print하도록 
+			}
+		}
+	}
+
+
+//	public static void printParking(String[][] space) {
+//	
+//	}
+
+
+	public static void selectMenu(String[][] space) { // case1의 parking()에 파라미터로 space를 받기 위함
+//	public static void selectMenu(String[][] space) { // case1의 parking()에 파라미터로 space를 받기 위함	
+		System.out.println("1) 주차하기 2) 차량검색 3) 출차하기 4) 종료");
+		System.out.print("메뉴를 선택하세요 : ");
+		
+	
+		switch(scanner.nextInt()) {
+			case 1:
+				parking();
+				break;
+			case 2:
+				System.out.print("case2 ");
+				break;
+			case 3:
+				System.out.print("case3 ");
+				break;
+			case 4:
+				System.out.print("종료합니다");
+	
+				System.exit(0);
+				scanner.close();
+				break;
+			default:
+				System.out.println("메뉴 번호를 확인 후 다시 입력해주세요.");
+				break;
+		}
+		System.out.println();	
 	}
 		
-	public static void selectMenu() {
-		while(true) {
-			System.out.println("1) 주차하기 2) 차량검색 3) 출차하기 4) 종료");
-			System.out.print("메뉴를 선택하세요 : ");
-			
-			
-			switch(scanner.nextInt()) {
-				case 1:
-					parking();
-					break;
-				case 2:
-					System.out.print("case2 ");
-					break;
-				case 3:
-					System.out.print("case3 ");
-					break;
-				case 4:
-					System.out.print("종료합니다");
-
-					System.exit(0);
-					scanner.close();
-					break;
-				default:
-					System.out.println("메뉴 번호를 확인 후 다시 입력해주세요.");
-					break;
-			}
-			System.out.println();
-		}
-		
-		
-		}
-		
 
 
-	public static void parking() {
+	public static void parking() { // main 클래스의 2차원 배열을 받기 위함
 		System.out.println();
 		System.out.println("**** 주차 하기 ****");
+		
+//		KhkimAssign space = new KhkimAssign();
+
 		
 		while(true) {
 
@@ -93,13 +103,18 @@ public class KhkimAssign {
 					break;
 				};			
 			
-			System.out.print(carNumber + " 차량의 주차를 완료하였습니다.");
-			System.out.println();
-			break;
+				System.out.print(carNumber + " 차량의 주차를 완료하였습니다.");
+//				System.out.println("===================================");
+//				System.out.println(space[parkingPlacRow][parkingPlaceCol]);
+//				if(space[parkingPlacRow][parkingPlaceCol].equals("♡")) {
+//					space[parkingPlacRow][parkingPlaceCol] = "aa";
+//				}
+//				
+				break;
 			}
+			break;
 		}
-		
-			
+
 		
 		
 		
